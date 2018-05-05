@@ -47,6 +47,12 @@ describe("About Applying What We Have Learnt", function() {
         return item.containsNuts === false;
       });
 
+      productsICanEat = noNuts.filter(function(item) {
+        if (!(item.ingredients.includes('mushrooms'))) {
+            return item;
+        } 
+      });
+
       //iterate through products array
         //chain multiple high order functions
         //for each object inside, filter out any where containsNuts is true
@@ -66,13 +72,23 @@ describe("About Applying What We Have Learnt", function() {
       }
     }
     
-    expect(sum).toBe(FILL_ME_IN);
+    expect(sum).toBe(233168);
   });
 
   it("should add all the natural numbers below 1000 that are multiples of 3 or 5 (functional)", function () {
-    var sum = FILL_ME_IN;    /* try chaining range() and reduce() */
+    var sum = 0;    /* try chaining range() and reduce() */
 
-    expect(233168).toBe(FILL_ME_IN);
+    var numbers = _.range(1, 1000);
+
+    sum = _.reduce(numbers, function(memo, num) {
+      if (num % 3 === 0 || num % 5 === 0) {
+        memo += num;
+      }
+    }, sum);
+
+    return sum;
+
+    expect(233168).toBe(sum);
   });
 
   /*********************************************************************************/
@@ -85,13 +101,16 @@ describe("About Applying What We Have Learnt", function() {
         }
     }
 
-    expect(ingredientCount['mushrooms']).toBe(FILL_ME_IN);
+    expect(ingredientCount['mushrooms']).toBe(2);
   });
 
   it("should count the ingredient occurrence (functional)", function () {
     var ingredientCount = { "{ingredient name}": 0 };
 
     /* chain() together map(), flatten() and reduce() */
+    //check if the ingredient name is in the object
+    //if it is increment the value of the key
+    
 
     expect(ingredientCount['mushrooms']).toBe(FILL_ME_IN);
   });
