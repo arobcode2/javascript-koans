@@ -108,12 +108,28 @@ describe("About Applying What We Have Learnt", function() {
     var ingredientCount = { "{ingredient name}": 0 };
 
     /* chain() together map(), flatten() and reduce() */
-    //check if the ingredient name is in the object
-    //if it is increment the value of the key
+    //use map to iterate over the array
+    //return _.pluck(products, "ingredients");
+    var newArr = products.map(function(element) {
+      return element.ingredients;
+    });
+
+    var flattenedArr = newArr.reduce((acc, val) => acc.concat(val, []));
+
+    return ingredientCount = flattenedArr.reduce(function(allIngredients, ingredient) {
+        if (ingredient in allIngredients) {
+            allIngredients[ingredient]++;
+        } else {
+            allIngredients[ingredient] = 1;
+        }
+        return allIngredients;
+    }, {});
     
 
-    expect(ingredientCount['mushrooms']).toBe(FILL_ME_IN);
+    expect(ingredientCount['mushrooms']).toBe(2);
   });
+
+
 
   /*********************************************************************************/
   /* UNCOMMENT FOR EXTRA CREDIT */
