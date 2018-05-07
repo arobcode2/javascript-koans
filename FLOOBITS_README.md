@@ -1,5 +1,8 @@
 # Welcome to Floobits!
 hello I am typing
+hi guys!
+I am typ
+hi andrew
 It looks like you're in an empty workspace. If you're using the web editor, you can 
 click on the menu in the upper left to upload or create files.
 

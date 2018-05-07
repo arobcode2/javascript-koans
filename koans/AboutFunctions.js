@@ -99,7 +99,7 @@ describe("About Functions", function() {
       
   });
 
-  it("should use function body as a string", function() {
+  xit("should use function body as a string", function() {
     var add = new Function("a", "b", "return a + b;");
     expect(add(1, 2)).toBe(3);
      
